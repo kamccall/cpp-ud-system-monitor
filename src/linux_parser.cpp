@@ -194,9 +194,9 @@ vector<string> LinuxParser::CpuUtilization()
       procInfo.push_back(steal);
       // next two values are included in prior values so don't need them
     }
-  	
     return procInfo;
   }
+  return procInfo;
 }
 
 // TODO: Read and return the total number of processes
