@@ -45,5 +45,6 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/workspace/CppND-System-Monitor-Project-Updated/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/workspace/cpp-ud-system-monitor/build/${CMAKE_INSTALL_MANIFEST}"
+# file(WRITE "/home/workspace/CppND-System-Monitor-Project-Updated/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
