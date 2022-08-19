@@ -103,7 +103,9 @@ long LinuxParser::UpTime()
     std::getline(filestream, line);
     std::istringstream linestream(line);
     linestream >> uptime;
-    return std::stoi(uptime);
+    
+    if (uptime != "")
+      return std::stoi(uptime);
   }
   
   return 0;
@@ -213,7 +215,8 @@ int LinuxParser::TotalProcesses()
       linestream >> key >> value;
       if (key == "processes")
       {
-        return std::stoi(value);
+        if (value != "")
+          return std::stoi(value);
       }
     }
   }
@@ -235,7 +238,8 @@ int LinuxParser::RunningProcesses()
       linestream >> key >> value;
       if (key == "procs_running")
       {
-        return std::stoi(value);
+        if (value != "")
+          return std::stoi(value);
       }
     }
   }
