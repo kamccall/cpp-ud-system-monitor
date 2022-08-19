@@ -194,7 +194,6 @@ vector<string> LinuxParser::CpuUtilization()
       procInfo.push_back(steal);
       // next two values are included in prior values so don't need them
     }
-    return procInfo;
   }
   return procInfo;
 }
@@ -253,6 +252,10 @@ string LinuxParser::Command(int pid)
   if (filestream.is_open())
   {
     std::getline(filestream, line);
+    
+    size_t pos = line.find_last_of("/");
+    if (pos != string::npos)
+      line = line.substr(pos+1);
     return line;
   }
   
